@@ -33,9 +33,15 @@ from deepliif.data import create_dataset
 from deepliif.models import create_model
 from deepliif.util.visualizer import save_images
 from deepliif.util import html
+import subprocess
+
 
 
 if __name__ == '__main__':
+
+    os.chmod("./Scripts/download_pre_trained_model.sh", 0o775)
+    subprocess.call("./Scripts/download_pre_trained_model.sh", shell=True)
+
     opt = TestOptions().parse()  # get test options
     # hard-code some parameters for test
     opt.num_threads = 0   # test code only supports num_threads = 1
