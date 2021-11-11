@@ -38,8 +38,6 @@ import mlflow
 
 if __name__ == '__main__':
 
-    mlflow.pytorch.autolog(disable=False)
-
     os.chmod("./Scripts/download_pre_trained_model.sh", 0o775)
     subprocess.call("./Scripts/download_pre_trained_model.sh", shell=True)
 
@@ -84,6 +82,7 @@ if __name__ == '__main__':
     print('Time passed: {}hour:{}min:{}sec'.format(t_hour, t_min, t_sec))
     webpage.save()  # save the HTML
 
-    mlflow.set_tag("run_succeeded", "true")
+    with mlflow.start_run() as run:
+        mlflow.set_tag("run_succeeded", "true")
 
     print("Program complete")
