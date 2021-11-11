@@ -34,10 +34,11 @@ from deepliif.models import create_model
 from deepliif.util.visualizer import save_images
 from deepliif.util import html
 import subprocess
-
-
+import mlflow
 
 if __name__ == '__main__':
+
+    mlflow.pytorch.autolog(disable=False)
 
     os.chmod("./Scripts/download_pre_trained_model.sh", 0o775)
     subprocess.call("./Scripts/download_pre_trained_model.sh", shell=True)
@@ -82,3 +83,7 @@ if __name__ == '__main__':
     (t_hour, t_min) = divmod(t_min, 60)
     print('Time passed: {}hour:{}min:{}sec'.format(t_hour, t_min, t_sec))
     webpage.save()  # save the HTML
+
+    mlflow.set_tag("run_succeeded", "true")
+
+    print("Program complete")
