@@ -1,0 +1,13 @@
+{
+    "num_workers": 0,
+    "spark_version": "10.0.x-gpu-ml-scala2.12",
+    "spark_conf": {
+        "spark.databricks.cluster.profile": "singleNode",
+        "spark.master": "local[*, 4]"
+    },
+    "node_type_id": "g4dn.2xlarge",
+    "driver_node_type_id": "g4dn.2xlarge",
+    "custom_tags": {
+        "ResourceClass": "SingleNode"
+    }
+}

@@ -1,0 +1,15 @@
+name: deepliif-databricks
+
+conda_env: environment.yaml
+
+entry_points:
+  main:
+    parameters:
+      dataroot: {type: str}
+      name: {type: str, default: "deepliif_training_run"}
+      model: {type: str, default: "DeepLIIF"}
+
+    command: "python train.py
+    --dataroot {dataroot}
+    --name {name}
+    --model {model}"
