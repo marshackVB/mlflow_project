@@ -19,7 +19,7 @@ def create_base_parser():
                         help='size of the overlapping area between tiles')
     parser.add_argument('--resize_self', required=False, type=bool, default=True,
                         help='if want to resize the whole slide to a specific size')
-    parser.add_argument('--gpu_ids', required=False, type=str, default='0',
+    parser.add_argument('--gpu_ids', required=False, type=str, default='0,1,2,3,4,5,6,7',
                         help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
     parser.add_argument('--post_process_seg_mask', action='store_true',
                         help='if user wants the post-processing script post-processes the segmentation mask')
