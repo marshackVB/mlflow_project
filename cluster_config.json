@@ -5,8 +5,8 @@
         "spark.databricks.cluster.profile": "singleNode",
         "spark.master": "local[*, 4]"
     },
-    "node_type_id": "g4dn.2xlarge",
-    "driver_node_type_id": "g4dn.2xlarge",
+    "node_type_id": "p3dn.24xlarge",
+    "driver_node_type_id": "p3dn.24xlarge",
     "custom_tags": {
         "ResourceClass": "SingleNode"
     }
